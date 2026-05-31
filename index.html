@@ -8,25 +8,40 @@
   <style>
     body {
       margin: 0;
-      background: black;
       height: 100vh;
       overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-family: Arial;
       color: white;
+    }
+
+    /* FULLSCREEN FAKE BLOG BACKGROUND */
+    #bg {
+      position: fixed;
+      inset: 0;
+      background: url("media/Screenshot%202026-05-31%20175928.png") center/cover no-repeat;
+      filter: blur(12px);
+      transform: scale(1.05);
+    }
+
+    /* DARK OVERLAY FOR READABILITY */
+    #overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
     }
 
     /* COOKIE BANNER */
     #box {
       position: absolute;
-      width: 340px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 360px;
       padding: 20px;
       border-radius: 12px;
-      overflow: hidden;
       text-align: center;
       z-index: 10;
+      overflow: hidden;
       color: white;
     }
 
@@ -44,7 +59,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
 
@@ -64,10 +79,13 @@
       cursor: pointer;
     }
 
-    /* VIDEO AREA */
+    /* RICKROLL */
     #rickroll {
       display: none;
+      position: relative;
+      z-index: 5;
       text-align: center;
+      padding-top: 40px;
     }
 
     video {
@@ -83,7 +101,11 @@
 
 <body>
 
-<!-- COOKIE BANNER -->
+<!-- BACKGROUND -->
+<div id="bg"></div>
+<div id="overlay"></div>
+
+<!-- COOKIE POPUP -->
 <div id="box">
   <div id="box-content">
     <p><b>Yum! Cookiesssssss!!!!!</b></p>
@@ -94,7 +116,7 @@
   </div>
 </div>
 
-<!-- RICKROLL CONTENT -->
+<!-- RICKROLL -->
 <div id="rickroll">
   <h1>You have been rickrolled! hahaha</h1>
 
