@@ -1,145 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cool Video</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      overflow: hidden;
-      font-family: Arial;
-      color: white;
-    }
+    <title>Google play bans google??</title>
 
-    /* FULLSCREEN FAKE BLOG BACKGROUND */
-    #bg {
-      position: fixed;
-      inset: 0;
-      background: url("media/Screenshot%202026-05-31%20175928.png") center/cover no-repeat;
-      filter: blur(12px);
-      transform: scale(1.05);
-    }
+    <!-- Discord / Open Graph -->
+    <meta property="og:title" content="Google play bans google??">
+    <meta property="og:description" content="Allegedly, google play moderation bans google">
+    <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVsI35NM2hR4g5qTOKRZaWem4FmoBAnLqVwQ&s">
+    <meta property="og:type" content="website">
 
-    /* DARK OVERLAY FOR READABILITY */
-    #overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.35);
-    }
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Google play bans google??">
+    <meta name="twitter:description" content="Allegedly, google play moderation bans google">
+    <meta name="twitter:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVsI35NM2hR4g5qTOKRZaWem4FmoBAnLqVwQ&s">
 
-    /* COOKIE BANNER */
-    #box {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 360px;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      z-index: 10;
-      overflow: hidden;
-      color: white;
-    }
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            color: white;
+            background: black;
+        }
 
-    #box::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url("media/Screenshot%202026-05-31%20175928.png") center/cover no-repeat;
-      filter: blur(10px);
-      transform: scale(1.2);
-      z-index: 0;
-    }
+        /* Fullscreen fake blog background */
+        #bg {
+            position: fixed;
+            inset: 0;
+            background: url("media/Screenshot%202026-05-31%20175928.png") center center / cover no-repeat;
+            filter: blur(12px);
+            transform: scale(1.05);
+            z-index: 0;
+        }
 
-    #box::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
+        /* Dark overlay */
+        #overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            z-index: 1;
+        }
 
-    #box-content {
-      position: relative;
-      z-index: 2;
-    }
+        /* Cookie banner */
+        #box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 360px;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            overflow: hidden;
+            z-index: 10;
+        }
 
-    #small {
-      font-size: 12px;
-      opacity: 0.85;
-    }
+        #box::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("media/Screenshot%202026-05-31%20175928.png") center center / cover no-repeat;
+            filter: blur(10px);
+            transform: scale(1.2);
+            z-index: 0;
+        }
 
-    button {
-      margin-top: 10px;
-      padding: 6px 12px;
-      cursor: pointer;
-    }
+        #box::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 1;
+        }
 
-    /* RICKROLL */
-    #rickroll {
-      display: none;
-      position: relative;
-      z-index: 5;
-      text-align: center;
-      padding-top: 40px;
-    }
+        #box-content {
+            position: relative;
+            z-index: 2;
+        }
 
-    video {
-      width: 80vw;
-      max-height: 70vh;
-    }
+        #small {
+            font-size: 12px;
+            opacity: 0.85;
+        }
 
-    h1 {
-      margin-bottom: 10px;
-    }
-  </style>
+        button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+
+        /* Rickroll section */
+        #rickroll {
+            display: none;
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        video {
+            width: 80vw;
+            max-height: 70vh;
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- BACKGROUND -->
 <div id="bg"></div>
 <div id="overlay"></div>
 
-<!-- COOKIE POPUP -->
 <div id="box">
-  <div id="box-content">
-    <p><b>Yum! Cookiesssssss!!!!!</b></p>
-    <p id="small">We need you to consent to our cookies.</p>
+    <div id="box-content">
+        <h2>Yum! Cookiesssssss!!!!!</h2>
+        <p id="small">We need you to consent to our cookies.</p>
 
-    <button id="accept">Accept</button>
-    <button id="decline">Decline</button>
-  </div>
+        <button id="accept">Accept</button>
+        <button id="decline">Decline</button>
+    </div>
 </div>
 
-<!-- RICKROLL -->
 <div id="rickroll">
-  <h1>You have been rickrolled! hahaha</h1>
+    <h1>You have been rickrolled! hahaha</h1>
 
-  <video id="video" loop>
-    <source src="media/2026-05-28 22-52-54.mp4" type="video/mp4">
-  </video>
+    <video id="video" loop controls>
+        <source src="media/2026-05-28 22-52-54.mp4" type="video/mp4">
+    </video>
 </div>
 
 <script>
-const btn = document.getElementById("accept");
+const accept = document.getElementById("accept");
 const box = document.getElementById("box");
-const rick = document.getElementById("rickroll");
+const rickroll = document.getElementById("rickroll");
 const video = document.getElementById("video");
 
-btn.addEventListener("click", async () => {
-  box.style.display = "none";
-  rick.style.display = "block";
+accept.addEventListener("click", async () => {
+    box.style.display = "none";
+    rickroll.style.display = "block";
 
-  try {
-    await video.play();
-  } catch (e) {
-    console.log("Play blocked:", e);
-  }
+    try {
+        await video.play();
+    } catch (err) {
+        console.log(err);
+    }
+});
+
+document.getElementById("decline").addEventListener("click", () => {
+    alert("Cookies are required.");
 });
 </script>
 
