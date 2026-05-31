@@ -15,51 +15,106 @@
       justify-content: center;
       align-items: center;
       font-family: Arial;
+      color: white;
     }
 
+    /* COOKIE BANNER */
     #box {
       position: absolute;
-      background: white;
+      width: 340px;
       padding: 20px;
+      border-radius: 12px;
+      overflow: hidden;
       text-align: center;
       z-index: 10;
-      border-radius: 10px;
+      color: white;
+    }
+
+    #box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("media/Screenshot%202026-05-31%20175928.png") center/cover no-repeat;
+      filter: blur(10px);
+      transform: scale(1.2);
+      z-index: 0;
+    }
+
+    #box::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
+
+    #box-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    #small {
+      font-size: 12px;
+      opacity: 0.85;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+
+    /* VIDEO AREA */
+    #rickroll {
+      display: none;
+      text-align: center;
     }
 
     video {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: none;
+      width: 80vw;
+      max-height: 70vh;
+    }
+
+    h1 {
+      margin-bottom: 10px;
     }
   </style>
 </head>
 
 <body>
 
-<!-- Cookie popup -->
+<!-- COOKIE BANNER -->
 <div id="box">
-  <p>We would like to show you cookies 🍪</p>
-  <button id="accept">Accept</button>
-  <button id="decline">Decline</button>
+  <div id="box-content">
+    <p><b>Yum! Cookiesssssss!!!!!</b></p>
+    <p id="small">We need you to consent to our cookies.</p>
+
+    <button id="accept">Accept</button>
+    <button id="decline">Decline</button>
+  </div>
 </div>
 
-<!-- Video -->
-<video id="video" loop>
-  <source src="media/2026-05-28 22-52-54.mp4" type="video/mp4">
-</video>
+<!-- RICKROLL CONTENT -->
+<div id="rickroll">
+  <h1>You have been rickrolled! hahaha</h1>
+
+  <video id="video" loop>
+    <source src="media/2026-05-28 22-52-54.mp4" type="video/mp4">
+  </video>
+</div>
 
 <script>
 const btn = document.getElementById("accept");
 const box = document.getElementById("box");
+const rick = document.getElementById("rickroll");
 const video = document.getElementById("video");
 
 btn.addEventListener("click", async () => {
   box.style.display = "none";
-  video.style.display = "block";
+  rick.style.display = "block";
 
   try {
-    await video.play(); // THIS is what unlocks autoplay with sound
+    await video.play();
   } catch (e) {
     console.log("Play blocked:", e);
   }
